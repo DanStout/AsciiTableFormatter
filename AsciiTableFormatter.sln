@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsciiTableFormatter", "AsciiTableFormatter\AsciiTableFormatter.csproj", "{3E7FB8C1-604D-41BC-9CC6-703458C906AC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsciiTableFormatter.Test", "AsciiTableFormatter.Test\AsciiTableFormatter.Test.csproj", "{F282DD1F-6092-495A-AE85-F023C8E3740D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3E7FB8C1-604D-41BC-9CC6-703458C906AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E7FB8C1-604D-41BC-9CC6-703458C906AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E7FB8C1-604D-41BC-9CC6-703458C906AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E7FB8C1-604D-41BC-9CC6-703458C906AC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F282DD1F-6092-495A-AE85-F023C8E3740D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F282DD1F-6092-495A-AE85-F023C8E3740D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F282DD1F-6092-495A-AE85-F023C8E3740D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F282DD1F-6092-495A-AE85-F023C8E3740D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D8E8FC7B-EC9D-4A9F-93EF-5884FA21C7E2}
+	EndGlobalSection
+EndGlobal
