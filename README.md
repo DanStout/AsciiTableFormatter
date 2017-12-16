@@ -1,9 +1,7 @@
 # AsciiTableFormatter
 A  C# library to generate ASCII Tables
 
-# Examples:
-
-
+## Examples:
 
 ```
 var list = new[]
@@ -34,3 +32,9 @@ o--------o-----o------------------o
 | 385745 | ??? | 84745.3498489754 |
 o--------o-----o------------------o
 ```
+
+## Build package
+
+* Ensure Visual Studio 2017's MSBuild is on your path environment variable variable (for example, `C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\MSBuild\15.0\Bin`)
+* Run `msbuild /t:pack /p:Configuration=Release` in the directory containing `AsciiTableFormatter.sln`
+* It will generate a `.nupkg` file in the `/bin/Release` directory
