@@ -2,7 +2,7 @@
 
 namespace AsciiTableFormatter
 {
-    public static class TypeExtensions
+    internal static class TypeExtensions
     {
         /// <summary>
         /// https://stackoverflow.com/a/5182747/2513761

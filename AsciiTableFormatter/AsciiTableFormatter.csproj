@@ -3,13 +3,13 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <PackageId>DanielStout.AsciiTableFormatter</PackageId>
-    <PackageVersion>1.0.0</PackageVersion>
+    <PackageVersion>1.1.0</PackageVersion>
     <Authors>Daniel Stout</Authors>
     <title>ASCII Table Formatter</title>
     <Description>Library for formatting objects as ASCII Tables</Description>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
-    <PackageReleaseNotes>First release</PackageReleaseNotes>
+    <PackageReleaseNotes>Table headers are now aligned to data </PackageReleaseNotes>
     <PackageTags>string table format ascii formatting</PackageTags>
-	<PackageProjectUrl>https://github.com/DanStout/AsciiTableFormatter</PackageProjectUrl>
-</PropertyGroup>
+    <PackageProjectUrl>https://github.com/DanStout/AsciiTableFormatter</PackageProjectUrl>
+  </PropertyGroup>
 </Project>

@@ -61,7 +61,7 @@ o-------o------o
         {
             var expected = Clean(@"
 o----------o
-| One      |
+|      One |
 o----------o
 |        1 |
 |        2 |
@@ -94,7 +94,7 @@ o----------o
         {
             var expected = Clean(@"
 o-----------o---------o
-| Int       | String  |
+|       Int | String  |
 o-----------o---------o
 |         1 | Bazinga |
 |         6 | Bobo    |
@@ -168,7 +168,7 @@ o-------o-----------------------------------------------------------------o-----
         {
             var expected = Clean(@"
 o--------o-----o------------------o
-| One    | Two | Three            |
+|    One | Two |            Three |
 o--------o-----o------------------o
 |      3 | Hi  |           123.34 |
 | 385745 | ??? | 84745.3498489754 |
@@ -232,12 +232,11 @@ o-------o
         [TestMethod]
         public void TestPrimitiveMix()
         {
-
             var expected = Clean(@"
 o------o
 | Hi   |
-|  123 |
-|   15 |
+| 123  |
+| 15   |
 | 2323 |
 o------o
 ");

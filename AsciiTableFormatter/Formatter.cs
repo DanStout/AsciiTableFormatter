@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
@@ -6,18 +7,23 @@ namespace AsciiTableFormatter
 {
     public class Formatter
     {
+        /// <summary>
+        /// Returns an ASCII table showing the data contained in the public properties of <paramref name="rows"/>
+        /// </summary>
         public static string Format<T>(IEnumerable<T> rows)
         {
             var type = typeof(T);
             var isSimple = type.IsSimpleType();
             var props = type
                 .GetProperties()
+                // Skip the indexed properties (e.g. exampleObj[0])
                 .Where(x => x.GetIndexParameters().Length == 0)
                 .ToArray();
 
             var headerStrs = new List<object>();
             if (isSimple)
             {
+                // For simple types there is no header label
                 headerStrs.Add(null);
             }
             else
@@ -59,11 +65,13 @@ namespace AsciiTableFormatter
             var bldr = new StringBuilder();
 
             var sizes = MaxLengthInEachColumn(rows);
+            var types = GetColumnTypes(rows);
 
             for (int rowNum = 0; rowNum < rows.Count; rowNum++)
             {
                 if (rowNum == 0)
                 {
+                    // Top border
                     AppendLine(bldr, sizes);
                     if (rows[0][0] == null)
                     {
@@ -81,18 +89,24 @@ namespace AsciiTableFormatter
                     {
                         bldr.Append("".PadLeft(size));
                     }
-                    else if (item.GetType().IsNumericType())
+                    else if (types[i] == ColumnType.Numeric)
                     {
                         bldr.Append(item.ToString().PadLeft(size));
                     }
-                    else
+                    else if (types[i] == ColumnType.Text)
                     {
                         bldr.Append(item.ToString().PadRight(size));
                     }
+                    else
+                    {
+                        throw new InvalidOperationException("Unexpected state");
+                    }
+
                     bldr.Append(" ");
 
                     if (i == row.Count - 1)
                     {
+                        // Add right border for last column
                         bldr.Append("|");
                     }
                 }
@@ -124,12 +138,25 @@ namespace AsciiTableFormatter
         private static List<int> MaxLengthInEachColumn(List<List<object>> rows)
         {
             var sizes = new List<int>();
+            //Start from second row to skip the header
             for (int i = 0; i < rows[1].Count; i++)
             {
                 var max = rows.Max(row => row[i]?.ToString()?.Length ?? 0);
                 sizes.Insert(i, max);
             }
             return sizes;
+        }
+
+        private static List<ColumnType> GetColumnTypes(List<List<object>> rows)
+        {
+            var types = new List<ColumnType>();
+            for(int i = 0; i < rows[1].Count; i++)
+            {
+                var isNumeric = rows.Skip(1).All(row => row[i]?.GetType()?.IsNumericType() ?? false);
+                var coltype = isNumeric ? ColumnType.Numeric : ColumnType.Text;
+                types.Insert(i, coltype);
+            }
+            return types;
         }
     }
 }
