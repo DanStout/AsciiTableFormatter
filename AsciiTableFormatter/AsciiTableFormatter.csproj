@@ -11,5 +11,6 @@
     <PackageReleaseNotes>https://github.com/DanStout/AsciiTableFormatter/blob/master/Docs/CHANGELOG.md</PackageReleaseNotes>
     <PackageTags>string table format ascii formatting</PackageTags>
     <PackageProjectUrl>https://github.com/DanStout/AsciiTableFormatter</PackageProjectUrl>
+	<PackageIconUrl>https://raw.githubusercontent.com/DanStout/AsciiTableFormatter/master/Docs/Logo.png</PackageIconUrl>
   </PropertyGroup>
 </Project>

@@ -26,7 +26,7 @@ Console.WriteLine(output);
 Output:
 ```
 o--------o-----o------------------o
-| One    | Two | Three            |
+|    One | Two |            Three |
 o--------o-----o------------------o
 |      3 | Hi  |           123.34 |
 | 385745 | ??? | 84745.3498489754 |
