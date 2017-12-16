@@ -1,9 +1,7 @@
-# AsciiTableFormatter
+# ![Logo](Docs/Logo.png) AsciiTableFormatter
 A  C# library to generate ASCII Tables
 
 # Examples:
-
-
 
 ```
 var list = new[]
